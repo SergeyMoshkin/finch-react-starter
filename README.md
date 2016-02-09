@@ -29,5 +29,5 @@ To start server, creating *./server/output/bundle.js* only
 npm run server-only
 ```
 
-- Server starts on localhost:5000
-- Web starts on localhost:3000
+- Server starts on *localhost:5000*
+- Web starts on *localhost:3000*
