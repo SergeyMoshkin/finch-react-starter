@@ -89,7 +89,6 @@ module.exports = {
           ]
           :
           [
-            'react-hot',
             'babel-loader?' + JSON.stringify({
               cacheDirectory: true,
               presets: ['es2015', 'stage-0', 'react'],
@@ -99,10 +98,11 @@ module.exports = {
         include: [
           config.paths.src,
           path.resolve(__dirname, "../node_modules/finch-react-core/src/"),
-          path.resolve(__dirname, "../node_modules/finch-react-web/src/")
+          path.resolve(__dirname, "../node_modules/finch-react-web/src/"),
+          path.resolve(__dirname, "../node_modules/react-native-drawer/")
         ],
         exclude: [
-          /node_modules\/(?!finch\-react)/,
+          /node_modules\/(?![finch\-react|react\-native\-drawer])/,
           /output/
         ]
       }
