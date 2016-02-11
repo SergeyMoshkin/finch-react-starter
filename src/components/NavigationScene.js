@@ -24,7 +24,6 @@ class NavigationScene extends StyledComponent {
     this.props.navigator.pop();
   }
   text_onPress(){
-    this.text_onClick();
   }
 
   static styles = T => [
