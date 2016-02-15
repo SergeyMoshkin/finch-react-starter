@@ -8,9 +8,9 @@ import React, {
   ScrollView,
   TouchableHighlight
 } from 'react-native';
+import Drawer from './Drawer'
 import NavigatorScene from './NavigationScene'
 import NavigatorComponent from './NavigatorComponent'
-import Drawer from 'react-native-drawer'
 import Menu from './Menu'
 import img_sandwich from '../assets/sandwich.png'
 import img_background from '../assets/football.jpg'
@@ -25,27 +25,8 @@ export default
 class App extends StyledComponent {
 
   state = {
-    isDrawerOpened: false,
     layout: {},
-    captureGestures: false
   };
-
-  setDrawerState(state) {
-    this.setState({
-      isDrawerOpened: state,
-      captureGestures: state
-    });
-  }
-
-  closeControlPanel() {
-    this.setDrawerState(false);
-    this.refs.drawer.close()
-  }
-
-  openControlPanel() {
-    this.setDrawerState(true);
-    this.refs.drawer.open();
-  }
 
   render() {
     console.log(this.state.layout.width);
@@ -54,39 +35,7 @@ class App extends StyledComponent {
         {
           (this.state.layout) ?
             (this.state.layout.width < 1024) ?
-              <Drawer
-                ref="drawer"
-                type="overlay"
-                content={<Menu onCloseControlPanel={() => this.closeControlPanel()}/>}
-                openDrawerOffset={0.2}
-                panCloseMask={0.2}
-                closedDrawerOffset={-3}
-                captureGestures={this.state.captureGestures}
-                styles={{
-                drawer: {shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3, backgroundColor: '#fff', elevation: 3},
-                main: {paddingLeft: 3}
-              }}
-                tweenHandler={(ratio) => ({
-                main: { opacity:(2-ratio)/2 }
-              })}
-                tweenDuration={200}
-                onClose={() => this.setDrawerState(false)}
-                onOpen={() => this.setDrawerState(true)}
-                tapToClose={true}
-              >
-                <View style={{backgroundColor: "#da4237"}}>
-                  <TouchableHighlight
-                    element="drawerControl"
-                    underlayColor="transparent"
-                    onPress={() => this.state.isDrawerOpened ? this.closeControlPanel() : this.openControlPanel()}>
-                    <Image
-                      element="sandwich"
-                      source={img_sandwich}
-                    />
-                  </TouchableHighlight>
-                </View>
-                <NavigatorComponent ref="nav" onExampleExit={() => {console.log('exit')}}/>
-              </Drawer>
+              <Drawer />
               :
               <View style={{position: "absolute",top: 0,bottom: 0,left: 0,right: 0,flexDirection: "row"}}>
                 <View element="controlPanel"><Menu/></View>
@@ -106,16 +55,6 @@ class App extends StyledComponent {
       main: {
         flex: 1,
         backgroundColor: 'black'
-      },
-      drawerControl: {
-        marginLeft: 20,
-        marginVertical: 20,
-        width: 30,
-        height: 30
-      },
-      sandwich: {
-        width: 30,
-        height: 30
       },
       controlPanel: {
         backgroundColor: '#fff',
