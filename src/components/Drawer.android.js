@@ -43,7 +43,6 @@ export default class Drawer extends StyledComponent {
     return (
       <DrawerLayoutAndroid
         ref="drawer"
-        style={{elevation: 3}}
         onDrawerClose={()=>this.setDrawerState(false)}
         onDrawerOpen={()=>this.setDrawerState(true)}
         drawerWidth={300}
@@ -76,11 +75,7 @@ export default class Drawer extends StyledComponent {
       sandwich: {
         width: 30,
         height: 30
-      },
-      controlPanel: {
-        backgroundColor: '#fff',
-        flex: 1
-      },
+      }
     }
   ];
 

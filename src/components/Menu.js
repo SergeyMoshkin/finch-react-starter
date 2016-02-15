@@ -23,7 +23,7 @@ export default class Menu extends StyledComponent {
   render() {
     var menuList = ["Первая", "Вторая", "Третья"];
     return (
-      <ScrollView style={{elevation: 3}} bounces={false} onLayout={(ev)=>this.setState({backgroundWidth: ev.nativeEvent.layout.width})}>
+      <ScrollView bounces={false} onLayout={(ev)=>this.setState({backgroundWidth: ev.nativeEvent.layout.width})}>
         <Image
           style={{width: this.state.backgroundWidth, height: this.state.backgroundWidth * IMAGE_RATIO}}
           source={img_background}
@@ -45,7 +45,7 @@ export default class Menu extends StyledComponent {
     {
       main: {
         backgroundColor: '#fff',
-        elevation: 10,
+        elevation: 3
       },
       menu_item: {
         borderBottomWidth: 0.5,
