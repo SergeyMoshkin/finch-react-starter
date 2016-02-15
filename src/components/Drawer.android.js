@@ -48,18 +48,7 @@ export default class Drawer extends StyledComponent {
         drawerWidth={300}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
         renderNavigationView={() => <Menu onCloseControlPanel={() => this.closeControlPanel()}/>}>
-        <View style={{backgroundColor: "#da4237"}}>
-          <TouchableHighlight
-            element="drawerControl"
-            underlayColor="transparent"
-            onPress={() => this.state.isDrawerOpened ? this.closeControlPanel() : this.openControlPanel()}>
-            <Image
-              element="sandwich"
-              source={img_sandwich}
-            />
-          </TouchableHighlight>
-        </View>
-        <Navigator ref="nav" onExampleExit={() => {console.log('exit')}}/>
+        <Navigator ref="nav" onExampleExit={() => {console.log('exit')}} onLeftElementClick={() => this.state.isDrawerOpened ? this.closeControlPanel() : this.openControlPanel()}/>
       </DrawerLayoutAndroid>
     )
   }

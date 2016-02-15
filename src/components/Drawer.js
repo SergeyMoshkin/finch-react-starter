@@ -10,7 +10,6 @@ import UniversalDrawer from 'react-native-drawer'
 import NavigatorScene from './NavigationScene'
 import Navigator from './Navigator'
 import Menu from './Menu'
-import img_sandwich from '../assets/sandwich.png'
 
 
 import FinchReactCore from 'finch-react-core';
@@ -63,18 +62,7 @@ export default class Drawer extends StyledComponent {
         onOpen={() => this.setDrawerState(true)}
         tapToClose={true}
       >
-        <View style={{backgroundColor: "#da4237"}}>
-          <TouchableHighlight
-            element="drawerControl"
-            underlayColor="transparent"
-            onPress={() => this.state.isDrawerOpened ? this.closeControlPanel() : this.openControlPanel()}>
-            <Image
-              element="sandwich"
-              source={img_sandwich}
-            />
-          </TouchableHighlight>
-        </View>
-        <Navigator ref="nav" onExampleExit={() => {console.log('exit')}}/>
+        <Navigator ref="nav" onExampleExit={() => {console.log('exit')}} onLeftElementClick={() => this.state.isDrawerOpened ? this.closeControlPanel() : this.openControlPanel()}/>
       </UniversalDrawer>
     )
   }
@@ -84,10 +72,6 @@ export default class Drawer extends StyledComponent {
       drawerControl: {
         marginLeft: 20,
         marginVertical: 20,
-        width: 30,
-        height: 30
-      },
-      sandwich: {
         width: 30,
         height: 30
       },
