@@ -21,7 +21,7 @@ export default class Menu extends StyledComponent {
   };
 
   render() {
-
+    var menuList = ["Первая", "Вторая", "Третья"];
     return (
       <ScrollView onLayout={(ev)=>this.setState({backgroundWidth: ev.nativeEvent.layout.width})}>
         <Image
@@ -29,15 +29,14 @@ export default class Menu extends StyledComponent {
           source={img_background}
           resizeMode="contain"
         />
-        <TouchableHighlight element="menu_item">
-          <Text element="item_text" onPress={() => this.props.onCloseControlPanel()}>Первая</Text>
-        </TouchableHighlight>
-        <TouchableHighlight element="menu_item">
-          <Text element="item_text" onPress={() => this.props.onCloseControlPanel()}>Вторая</Text>
-        </TouchableHighlight>
-        <TouchableHighlight element="menu_item">
-          <Text element="item_text" onPress={() => this.props.onCloseControlPanel()}>Третья</Text>
-        </TouchableHighlight>
+        {
+          menuList.map((el) => (
+            <TouchableHighlight element="menu_item" key={el}>
+              <Text element="item_text" onPress={() => this.props.onCloseControlPanel ?  this.props.onCloseControlPanel() : false}>{el}</Text>
+            </TouchableHighlight>)
+          )
+        }
+
       </ScrollView>
     )
   }
@@ -48,10 +47,10 @@ export default class Menu extends StyledComponent {
         borderBottomWidth: 0.5,
         borderStyle: 'solid',
         borderBottomColor: '#aaa',
-        paddingVertical: 20,
-        paddingLeft: 20,
       },
       item_text: {
+        paddingVertical: 20,
+        paddingLeft: 20,
         flex: 1
       }
     }

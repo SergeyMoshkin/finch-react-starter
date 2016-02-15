@@ -89,7 +89,7 @@ class App extends StyledComponent {
               </Drawer>
               :
               <View style={{position: "absolute",top: 0,bottom: 0,left: 0,right: 0,flexDirection: "row"}}>
-                <View element="controlPanel"><Menu onCloseControlPanel={() => this.closeControlPanel()}/></View>
+                <View element="controlPanel"><Menu/></View>
                 <View element="navigator">
                   <NavigatorComponent ref="nav" onExampleExit={() => {console.log('exit_web')}}/>
                 </View>
@@ -118,6 +118,7 @@ class App extends StyledComponent {
         height: 30
       },
       controlPanel: {
+        backgroundColor: '#fff',
         flex: 1
       },
       navigator: {
