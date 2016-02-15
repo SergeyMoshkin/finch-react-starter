@@ -54,15 +54,6 @@ class NavMenu extends StyledComponent {
         />
         <NavButton
           onPress={() => {
-            this.props.navigator.push({
-              message: 'Swipe down to dismiss',
-              sceneConfig: Navigator.SceneConfigs.FloatFromBottom,
-            });
-          }}
-          text="Float in from bottom"
-        />
-        <NavButton
-          onPress={() => {
             this.props.navigator.pop();
           }}
           text="Pop"
@@ -77,7 +68,7 @@ class NavMenu extends StyledComponent {
           onPress={() => {
             this.props.navigator.push({
               id: 'back',
-              sceneConfig: Navigator.SceneConfigs.FloatFromLeft
+              sceneConfig: Navigator.SceneConfigs.FloatFromRight
             });
           }}
           text="move forward"
@@ -107,7 +98,7 @@ class NavMenu extends StyledComponent {
   ];
 }
 
-export default class NavigatorComponent extends StyledComponent {
+export default class NavigatorCustom extends StyledComponent {
 
   renderScene(route, nav) {
     switch (route.id) {

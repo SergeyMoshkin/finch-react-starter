@@ -9,7 +9,7 @@ import React, {
 } from 'react-native'
 import UIManager from 'UIManager'
 import NavigatorScene from './NavigationScene'
-import NavigatorComponent from './NavigatorComponent'
+import NavigatorComponent from './Navigator'
 import Menu from './Menu'
 import img_sandwich from '../assets/sandwich.png'
 

@@ -4,13 +4,12 @@ import React, {
   View,
   Text,
   Image,
-  Navigator,
   ScrollView,
   TouchableHighlight
 } from 'react-native';
 import Drawer from './Drawer'
 import NavigatorScene from './NavigationScene'
-import NavigatorComponent from './NavigatorComponent'
+import Navigator from './Navigator'
 import Menu from './Menu'
 import img_sandwich from '../assets/sandwich.png'
 import img_background from '../assets/football.jpg'
@@ -40,7 +39,7 @@ class App extends StyledComponent {
               <View style={{position: "absolute",top: 0,bottom: 0,left: 0,right: 0,flexDirection: "row"}}>
                 <View element="controlPanel"><Menu/></View>
                 <View element="navigator">
-                  <NavigatorComponent ref="nav" onExampleExit={() => {console.log('exit_web')}}/>
+                  <Navigator ref="nav" onExampleExit={() => {console.log('exit_web')}}/>
                 </View>
               </View>
             :
