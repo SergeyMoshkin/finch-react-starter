@@ -52,7 +52,7 @@ class NavMenu extends StyledComponent {
       />
     </TouchableHighlight>;
     return (
-      <ScrollView>
+      <ScrollView bounces={false}>
         <View element="header">
           {this.props.leftElement ? this.props.leftElement : backButton}
           <Text element="messageText">{this.props.message}</Text>
