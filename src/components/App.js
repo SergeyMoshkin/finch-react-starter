@@ -33,7 +33,7 @@ class App extends StyledComponent {
     return (
       <View onLayout={(ev)=>this.setState({layout:ev.nativeEvent.layout})}>
         {
-          (this.state.layout) ?
+          (this.state.layout.width) ?
             (this.state.layout.width < 1024) ?
               <Drawer />
               :
