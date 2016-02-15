@@ -6,9 +6,9 @@ import React, {
   ScrollView,
   TouchableHighlight,
 } from 'react-native'
-import UniversalDraver from 'react-native-drawer'
+import UniversalDrawer from 'react-native-drawer'
 import NavigatorScene from './NavigationScene'
-import NavigatorComponent from './Navigator'
+import Navigator from './Navigator'
 import Menu from './Menu'
 import img_sandwich from '../assets/sandwich.png'
 
@@ -43,7 +43,7 @@ export default class Drawer extends StyledComponent {
 
   render() {
     return (
-      <UniversalDraver
+      <UniversalDrawer
         ref="drawer"
         type="overlay"
         content={<Menu onCloseControlPanel={() => this.closeControlPanel()}/>}
@@ -74,8 +74,8 @@ export default class Drawer extends StyledComponent {
             />
           </TouchableHighlight>
         </View>
-        <NavigatorComponent ref="nav" onExampleExit={() => {console.log('exit')}}/>
-      </UniversalDraver>
+        <Navigator ref="nav" onExampleExit={() => {console.log('exit')}}/>
+      </UniversalDrawer>
     )
   }
 

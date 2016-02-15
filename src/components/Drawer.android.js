@@ -9,7 +9,7 @@ import React, {
 } from 'react-native'
 import UIManager from 'UIManager'
 import NavigatorScene from './NavigationScene'
-import NavigatorComponent from './Navigator'
+import Navigator from './Navigator'
 import Menu from './Menu'
 import img_sandwich from '../assets/sandwich.png'
 
@@ -59,7 +59,7 @@ export default class Drawer extends StyledComponent {
             />
           </TouchableHighlight>
         </View>
-        <NavigatorComponent ref="nav" onExampleExit={() => {console.log('exit')}}/>
+        <Navigator ref="nav" onExampleExit={() => {console.log('exit')}}/>
       </DrawerLayoutAndroid>
     )
   }
