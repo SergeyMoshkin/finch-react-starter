@@ -140,7 +140,7 @@ export default class NavigatorCustom extends StyledComponent {
   render() {
     let leftIcon = <TouchableHighlight
         underlayColor="transparent"
-        onPress={() => this.props.onLeftElementClick()}>
+        onPress={() => this.props.onLeftElementClick ? this.props.onLeftElementClick() : false}>
         <Image
           style={{width: 30, height: 30}}
           source={img_sandwich}
