@@ -51,11 +51,12 @@ export default class Menu extends StyledComponent {
         borderBottomWidth: 0.5,
         borderStyle: 'solid',
         borderBottomColor: '#aaa',
-        paddingLeft: 20,
+        paddingHorizontal: 15,
+        paddingVertical: 14,
       },
       item_text: {
-        marginVertical: 20,
-        flex: 1
+        flex: 1,
+        fontWeight: 'bold'
       }
     }
   ];

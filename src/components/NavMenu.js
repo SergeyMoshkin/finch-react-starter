@@ -8,38 +8,16 @@ import React, {
   TouchableHighlight,
 } from 'react-native';
 import NavButton from './NavButton'
-import img_back from '../assets/ic_arrow_back_white_24dp_2x.png'
+import NavMenuHeader from './NavMenuHeader'
 
 import FinchReactCore from 'finch-react-core';
 let {StyledComponent} = FinchReactCore;
 
 export default class NavMenu extends StyledComponent {
   render() {
-    let other = <NavButton
-      onPress={() => {
-            this.props.navigator.push({
-              id: 'back',
-              message: 'NavigationScene',
-              sceneConfig: Navigator.SceneConfigs.FloatFromRight
-            });
-          }}
-      text="move forward"
-    />;
-
-    let backButton = <TouchableHighlight
-      underlayColor="transparent"
-      onPress={() => this.props.navigator.pop()}>
-      <Image
-        style={{width: 24, height: 24}}
-        source={img_back}
-      />
-    </TouchableHighlight>;
     return (
       <ScrollView bounces={false}>
-        <View element="header">
-            {this.props.leftElement ? this.props.leftElement : backButton}
-            <Text element="messageText">{this.props.message}</Text>
-        </View>
+        <NavMenuHeader {...this.props} />
         <NavButton
           onPress={() => {
             this.props.navigator.push({
@@ -60,6 +38,16 @@ export default class NavMenu extends StyledComponent {
             this.props.navigator.popToTop();
           }}
           text="Pop to top"
+        />
+        <NavButton
+          onPress={() => {
+            this.props.navigator.push({
+              id: 'back',
+              message: 'NavigationScene',
+              sceneConfig: Navigator.SceneConfigs.HorizontalSwipeJump,
+            });
+          }}
+          text="move forward"
         />
         <NavButton
           onPress={() => this.props.onExampleExit()}

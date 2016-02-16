@@ -7,6 +7,7 @@ import React, {
   TouchableHighlight
 } from 'react-native';
 import img_back from '../assets/back.png'
+import NavMenuHeader from './NavMenuHeader'
 
 import FinchReactCore from 'finch-react-core';
 let {StyledComponent} = FinchReactCore;
@@ -15,20 +16,9 @@ export default
 class NavigationScene extends StyledComponent {
 
   render() {
-    let backButton = <TouchableHighlight
-      underlayColor="transparent"
-      onPress={() => this.props.navigator.pop()}>
-      <Image
-        style={{width: 30, height: 30}}
-        source={img_back}
-      />
-    </TouchableHighlight>;
     return (
       <View>
-        <View element="header">
-          {this.props.leftElement ? this.props.leftElement : backButton}
-          <Text element="messageText">{this.props.message}</Text>
-        </View>
+        <NavMenuHeader {...this.props} />
         <Text element="text" attach="onClick, onPress">Back</Text>
       </View>
     );

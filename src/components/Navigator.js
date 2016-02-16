@@ -22,7 +22,8 @@ export default class NavigatorCustom extends StyledComponent {
         return (
           <NavigationScene
             leftElement={route.leftElement}
-            message={route.message}navigator={nav}
+            message={route.message}
+            navigator={nav}
           />
       );
       default:
@@ -42,7 +43,7 @@ export default class NavigatorCustom extends StyledComponent {
         underlayColor="transparent"
         onPress={() => this.props.onLeftElementClick ? this.props.onLeftElementClick() : false}>
         <Image
-          style={{width: 24, height: 24}}
+          element="icon"
           source={img_menu}
         />
       </TouchableHighlight>;
@@ -55,7 +56,7 @@ export default class NavigatorCustom extends StyledComponent {
           if (route.sceneConfig) {
             return route.sceneConfig;
           }
-          return Navigator.SceneConfigs.FloatFromBottom;
+          return Navigator.SceneConfigs.HorizontalSwipeJump;
         }}
       />
     );
@@ -68,10 +69,6 @@ export default class NavigatorCustom extends StyledComponent {
         justifyContent: 'center',
         alignItems: 'stretch',
         backgroundColor: '#F5FCFF',
-      },
-      sandwich: {
-        width: 30,
-        height: 30
       },
     }
   ];
