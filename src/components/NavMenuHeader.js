@@ -1,5 +1,6 @@
 import React, {
   StyleSheet,
+  Platform,
   Text,
   View,
   Image,
@@ -12,6 +13,7 @@ let {StyledComponent} = FinchReactCore;
 
 export default class NavMenuHeader extends StyledComponent {
   render() {
+    console.log(Platform);
     let backButton = <TouchableHighlight
       underlayColor="transparent"
       onPress={() => this.props.navigator.pop()}>
@@ -23,15 +25,23 @@ export default class NavMenuHeader extends StyledComponent {
 
     return (
       <View>
+      {
+        (Platform.OS === "ios")
+          ? <View element="topIOSTab"></View>
+          : null
+      }
+      <View element="header">
+
         {this.props.leftElement ? this.props.leftElement : backButton}
         <Text element="messageText">{this.props.message}</Text>
       </View>
+        </View>
     );
   }
 
   static styles = T => [
     {
-      main: {
+      header: {
         backgroundColor: '#da4237',
         flexDirection: 'row',
         padding: 15,
@@ -42,6 +52,11 @@ export default class NavMenuHeader extends StyledComponent {
         color: '#fff',
         marginLeft: 16,
         paddingTop: 2,
+      },
+      topIOSTab: {
+        flex: 1,
+        height: 24,
+        backgroundColor: '#B5342A'
       },
       icon: {
         width: 24,
