@@ -59,7 +59,7 @@ class App extends StyledComponent {
         backgroundColor: '#fff',
         flex: 1,
         position: 'relative',
-
+        zIndex: 1
       },
       navigator: {
         position: 'relative',
