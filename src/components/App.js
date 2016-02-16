@@ -36,7 +36,7 @@ class App extends StyledComponent {
             (this.state.layout.width < 1024) ?
               <Drawer />
               :
-              <View style={{position: "absolute",top: 0,bottom: 0,left: 0,right: 0,flexDirection: "row"}}>
+              <View style={{position: "absolute",top: 0,bottom: 0,left: 0,right: 0,flexDirection: "row",overflow: "hidden"}}>
                 <View element="controlPanel"><Menu/></View>
                 <View element="navigator">
                   <Navigator ref="nav" onExampleExit={() => {console.log('exit_web')}}/>
