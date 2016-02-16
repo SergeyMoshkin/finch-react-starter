@@ -8,26 +8,37 @@ import React, {
   TouchableHighlight,
 } from 'react-native';
 import NavButton from './NavButton'
-import img_back from '../assets/back.png'
+import img_back from '../assets/ic_arrow_back_white_24dp_2x.png'
 
 import FinchReactCore from 'finch-react-core';
 let {StyledComponent} = FinchReactCore;
 
 export default class NavMenu extends StyledComponent {
   render() {
+    let other = <NavButton
+      onPress={() => {
+            this.props.navigator.push({
+              id: 'back',
+              message: 'NavigationScene',
+              sceneConfig: Navigator.SceneConfigs.FloatFromRight
+            });
+          }}
+      text="move forward"
+    />;
+
     let backButton = <TouchableHighlight
       underlayColor="transparent"
       onPress={() => this.props.navigator.pop()}>
       <Image
-        style={{width: 30, height: 30}}
+        style={{width: 24, height: 24}}
         source={img_back}
       />
     </TouchableHighlight>;
     return (
       <ScrollView bounces={false}>
         <View element="header">
-          {this.props.leftElement ? this.props.leftElement : backButton}
-          <Text element="messageText">{this.props.message}</Text>
+            {this.props.leftElement ? this.props.leftElement : backButton}
+            <Text element="messageText">{this.props.message}</Text>
         </View>
         <NavButton
           onPress={() => {
@@ -51,16 +62,6 @@ export default class NavMenu extends StyledComponent {
           text="Pop to top"
         />
         <NavButton
-          onPress={() => {
-            this.props.navigator.push({
-              id: 'back',
-              message: 'NavigationScene',
-              sceneConfig: Navigator.SceneConfigs.FloatFromRight
-            });
-          }}
-          text="move forward"
-        />
-        <NavButton
           onPress={() => this.props.onExampleExit()}
           text="Log 'exit'"
         />
@@ -76,19 +77,15 @@ export default class NavMenu extends StyledComponent {
       },
       header: {
         backgroundColor: '#da4237',
-        paddingTop: 20,
         flexDirection: 'row',
-        paddingLeft: 20,
-        paddingVertical: 20
+        padding: 15,
       },
       messageText: {
-        flex: 1,
-        justifyContent: 'center',
-        textAlign: 'center',
         fontSize: 17,
         fontWeight: '500',
         color: '#fff',
-        paddingTop: 5
+        marginLeft: 16,
+        paddingTop: 2,
       },
     }
   ];

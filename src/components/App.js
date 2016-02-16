@@ -57,7 +57,9 @@ class App extends StyledComponent {
       },
       controlPanel: {
         backgroundColor: '#fff',
-        flex: 1
+        flex: 1,
+        position: 'relative',
+
       },
       navigator: {
         position: 'relative',

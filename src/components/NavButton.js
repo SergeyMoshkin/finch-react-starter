@@ -21,13 +21,13 @@ export default class NavButton extends StyledComponent {
     {
       main: {
         backgroundColor: 'white',
-        padding: 15,
+        paddingHorizontal: 15,
+        paddingVertical: 26,
         borderBottomWidth: StyleSheet.hairlineWidth,
         borderBottomColor: '#CDCDCD',
       },
       buttonText: {
         fontSize: 17,
-        fontWeight: '500',
       },
     }
   ];

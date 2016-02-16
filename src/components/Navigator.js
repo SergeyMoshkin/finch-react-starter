@@ -7,7 +7,7 @@ import React, {
   Image,
   TouchableHighlight,
 } from 'react-native';
-import img_sandwich from '../assets/sandwich.png'
+import img_menu from '../assets/ic_menu_white_24dp_2x.png'
 import NavMenu from './NavMenu'
 
 import FinchReactCore from 'finch-react-core';
@@ -42,8 +42,8 @@ export default class NavigatorCustom extends StyledComponent {
         underlayColor="transparent"
         onPress={() => this.props.onLeftElementClick ? this.props.onLeftElementClick() : false}>
         <Image
-          style={{width: 30, height: 30}}
-          source={img_sandwich}
+          style={{width: 24, height: 24}}
+          source={img_menu}
         />
       </TouchableHighlight>;
     return (
