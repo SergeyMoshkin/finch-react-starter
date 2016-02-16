@@ -44,7 +44,7 @@ export default class NavMenu extends StyledComponent {
           onPress={() => {
             this.props.navigator.push({
               message: 'Swipe right to dismiss',
-              sceneConfig: Navigator.SceneConfigs.FloatFromRight,
+              sceneConfig: Navigator.SceneConfigs.HorizontalSwipeJump,
             });
           }}
           text="Float in from right"
@@ -79,6 +79,7 @@ export default class NavMenu extends StyledComponent {
         backgroundColor: '#da4237',
         flexDirection: 'row',
         padding: 15,
+
       },
       messageText: {
         fontSize: 17,
