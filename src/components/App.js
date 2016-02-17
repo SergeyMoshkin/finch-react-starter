@@ -52,7 +52,12 @@ class App extends StyledComponent {
     {
       main: {
         flex: 1,
-        backgroundColor: 'black'
+        backgroundColor: 'black',
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0
       },
       controlPanel: {
         backgroundColor: '#fff',
@@ -63,6 +68,7 @@ class App extends StyledComponent {
       navigator: {
         position: 'relative',
         flex: 5,
+        backgroundColor: '#ccc'
       },
     }
   ];

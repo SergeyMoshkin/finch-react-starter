@@ -13,7 +13,6 @@ let {StyledComponent} = FinchReactCore;
 
 export default class NavMenuHeader extends StyledComponent {
   render() {
-    console.log(Platform);
     let backButton = <TouchableHighlight
       underlayColor="transparent"
       onPress={() => this.props.navigator.pop()}>
