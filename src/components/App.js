@@ -28,7 +28,6 @@ class App extends StyledComponent {
   };
 
   render() {
-    console.log(this.state.layout.width);
     return (
       <View onLayout={(ev)=>this.setState({layout:ev.nativeEvent.layout})}>
         {

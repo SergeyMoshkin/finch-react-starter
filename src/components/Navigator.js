@@ -68,7 +68,6 @@ export default class NavigatorCustom extends StyledComponent {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'stretch',
-        backgroundColor: '#F5FCFF',
       },
     }
   ];

@@ -25,17 +25,16 @@ export default class NavMenuHeader extends StyledComponent {
 
     return (
       <View>
-      {
-        (Platform.OS === "ios")
-          ? <View element="topIOSTab"></View>
-          : null
-      }
-      <View element="header">
-
-        {this.props.leftElement ? this.props.leftElement : backButton}
-        <Text element="messageText">{this.props.message}</Text>
-      </View>
+        {
+          (Platform.OS === "ios")
+            ? <View element="topIOSTab"></View>
+            : null
+        }
+        <View element="header">
+          {this.props.leftElement ? this.props.leftElement : backButton}
+          <Text element="messageText">{this.props.message}</Text>
         </View>
+      </View>
     );
   }
 
@@ -55,7 +54,7 @@ export default class NavMenuHeader extends StyledComponent {
       },
       topIOSTab: {
         flex: 1,
-        height: 24,
+        height: 20,
         backgroundColor: '#B5342A'
       },
       icon: {
