@@ -49,7 +49,7 @@ export default class NavMenuHeader extends StyledComponent {
         fontSize: 17,
         fontWeight: '500',
         color: '#fff',
-        marginLeft: 16,
+        marginLeft: 32,
         paddingTop: 2,
       },
       topIOSTab: {
