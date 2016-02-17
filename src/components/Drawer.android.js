@@ -11,7 +11,6 @@ import UIManager from 'UIManager'
 import NavigatorScene from './NavigationScene'
 import Navigator from './Navigator'
 import Menu from './Menu'
-import img_sandwich from '../assets/sandwich.png'
 
 
 import FinchReactCore from 'finch-react-core';
@@ -55,16 +54,6 @@ export default class Drawer extends StyledComponent {
 
   static styles = T => [
     {
-      drawerControl: {
-        marginLeft: 20,
-        marginVertical: 20,
-        width: 30,
-        height: 30
-      },
-      sandwich: {
-        width: 30,
-        height: 30
-      }
     }
   ];
 
