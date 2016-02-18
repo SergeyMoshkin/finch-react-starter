@@ -4,7 +4,6 @@ import React, {
   Text,
   Image,
   ScrollView,
-  TouchableHighlight,
 } from 'react-native'
 import UniversalDrawer from 'react-native-drawer'
 import NavigatorScene from './NavigationScene'

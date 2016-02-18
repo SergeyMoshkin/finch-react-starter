@@ -4,7 +4,7 @@ import React, {
   Text,
   Image,
   ScrollView,
-  TouchableHighlight,
+  TouchableOpacity,
 } from 'react-native';
 import img_background from '../assets/football.jpg'
 
@@ -31,9 +31,9 @@ export default class Menu extends StyledComponent {
         />
         {
           menuList.map((el, i) => (
-            <TouchableHighlight underlayColor="#ccc" element="menu_item" key={i} onPress={() => this.props.onCloseControlPanel ?  this.props.onCloseControlPanel() : false}>
+            <TouchableOpacity element="menu_item" key={i} onPress={() => this.props.onCloseControlPanel ?  this.props.onCloseControlPanel() : false}>
               <Text element="item_text">{el}</Text>
-            </TouchableHighlight>)
+            </TouchableOpacity>)
           )
         }
 

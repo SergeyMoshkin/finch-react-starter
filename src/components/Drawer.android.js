@@ -4,7 +4,6 @@ import React, {
   Text,
   Image,
   ScrollView,
-  TouchableHighlight,
   DrawerLayoutAndroid
 } from 'react-native'
 import UIManager from 'UIManager'

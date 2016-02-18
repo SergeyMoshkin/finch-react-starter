@@ -4,7 +4,6 @@ import React, {
   View,
   Text,
   Image,
-  TouchableHighlight
 } from 'react-native';
 import img_back from '../assets/back.png'
 import NavMenuHeader from './NavMenuHeader'

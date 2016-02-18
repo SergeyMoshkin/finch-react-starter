@@ -5,7 +5,6 @@ import React, {
   View,
   Text,
   Image,
-  TouchableHighlight,
 } from 'react-native';
 import NavButton from './NavButton'
 import NavMenuHeader from './NavMenuHeader'
