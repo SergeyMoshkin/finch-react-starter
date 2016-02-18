@@ -49,7 +49,8 @@ export default class NavMenuHeader extends StyledComponent {
       leftButton: {
         width: 40,
         flexDirection: 'row',
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
+        display: 'flex'
       },
       messageText: {
         fontSize: 17,
