@@ -14,6 +14,7 @@ let {StyledComponent} = FinchReactCore;
 export default class NavMenuHeader extends StyledComponent {
   render() {
     let backButton = <TouchableHighlight
+      element="leftButton"
       underlayColor="transparent"
       onPress={() => this.props.navigator.pop()}>
       <Image
@@ -43,6 +44,12 @@ export default class NavMenuHeader extends StyledComponent {
         backgroundColor: '#da4237',
         flexDirection: 'row',
         padding: 15,
+        paddingLeft: 0,
+      },
+      leftButton: {
+        width: 40,
+        flexDirection: 'row',
+        justifyContent: 'flex-end'
       },
       messageText: {
         fontSize: 17,
