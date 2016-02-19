@@ -15,44 +15,46 @@ let {StyledComponent} = FinchReactCore;
 export default class NavMenu extends StyledComponent {
   render() {
     return (
-      <ScrollView bounces={false}>
+      <View>
         <NavMenuHeader {...this.props} />
-        <NavButton
-          onPress={() => {
-            this.props.navigator.push({
-              message: 'Swipe right to dismiss',
-              sceneConfig: Navigator.SceneConfigs.HorizontalSwipeJump,
-            });
-          }}
-          text="Float in from right"
-        />
-        <NavButton
-          onPress={() => {
-            this.props.navigator.pop();
-          }}
-          text="Pop"
-        />
-        <NavButton
-          onPress={() => {
-            this.props.navigator.popToTop();
-          }}
-          text="Pop to top"
-        />
-        <NavButton
-          onPress={() => {
-            this.props.navigator.push({
-              id: 'back',
-              message: 'NavigationScene',
-              sceneConfig: Navigator.SceneConfigs.HorizontalSwipeJump,
-            });
-          }}
-          text="move forward"
-        />
-        <NavButton
-          onPress={() => this.props.onExampleExit()}
-          text="Log 'exit'"
-        />
-      </ScrollView>
+        <ScrollView element="scrollContainer">
+          <NavButton
+            onPress={() => {
+              this.props.navigator.push({
+                message: 'Swipe right to dismiss',
+                sceneConfig: Navigator.SceneConfigs.HorizontalSwipeJump,
+              });
+            }}
+            text="Float in from right"
+          />
+          <NavButton
+            onPress={() => {
+              this.props.navigator.pop();
+            }}
+            text="Pop"
+          />
+          <NavButton
+            onPress={() => {
+              this.props.navigator.popToTop();
+            }}
+            text="Pop to top"
+          />
+          <NavButton
+            onPress={() => {
+              this.props.navigator.push({
+                id: 'back',
+                message: 'NavigationScene',
+                sceneConfig: Navigator.SceneConfigs.HorizontalSwipeJump,
+              });
+            }}
+            text="move forward"
+          />
+          <NavButton
+            onPress={() => this.props.onExampleExit()}
+            text="Log 'exit'"
+          />
+        </ScrollView>
+      </View>
     );
   }
 
@@ -61,6 +63,9 @@ export default class NavMenu extends StyledComponent {
       main: {
         flex: 1,
         backgroundColor: '#EAEAEA',
+      },
+      scrollContainer: {
+        flex: 1,
       },
       header: {
         backgroundColor: '#da4237',
