@@ -25,26 +25,20 @@ export default class NavMenuHeader extends StyledComponent {
 
     return (
       <View>
-        {
-          (Platform.OS === "ios")
-            ? <View element="topIOSTab"></View>
-            : null
-        }
-        <View element="header">
-          {this.props.leftElement ? this.props.leftElement : backButton}
-          <Text element="messageText">{this.props.message}</Text>
-        </View>
+        {this.props.leftElement ? this.props.leftElement : backButton}
+        <Text element="messageText">{this.props.message}</Text>
       </View>
     );
   }
 
   static styles = T => [
     {
-      header: {
+      main: {
         backgroundColor: '#da4237',
         flexDirection: 'row',
         padding: 15,
         paddingLeft: 0,
+        paddingTop: 35
       },
       leftButton: {
         width: 40,

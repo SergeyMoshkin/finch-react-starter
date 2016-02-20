@@ -1,5 +1,6 @@
 import React, {
   Component,
+  Platform,
   Dimensions,
   View,
   Text,
@@ -43,6 +44,11 @@ class App extends StyledComponent {
               </View>
             :
             null
+        }
+        {
+          (Platform.OS === "ios")
+            ? <View style={{position: 'absolute', height: 20, top: 0, left: 0, right: 0, backgroundColor: "rgba(0,0,0,0.2)"}}></View>
+            : null
         }
       </View>
     );

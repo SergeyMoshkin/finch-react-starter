@@ -1,10 +1,12 @@
 import React, {
-  Navigator,
-  ScrollView,
   StyleSheet,
+  Platform,
   View,
   Text,
   Image,
+  Navigator,
+  ScrollView,
+  StatusBar
 } from 'react-native';
 import NavButton from './NavButton'
 import NavMenuHeader from './NavMenuHeader'
@@ -16,6 +18,15 @@ export default class NavMenu extends StyledComponent {
   render() {
     return (
       <View>
+        {
+          (Platform.OS !== "web")
+            ? (<StatusBar
+                backgroundColor="rgba(0,0,0,0.2)"
+                barStyle="light-content"
+                translucent={true}
+            />)
+            : null
+        }
         <NavMenuHeader {...this.props} />
         <ScrollView element="scrollContainer">
           <NavButton
@@ -34,6 +45,61 @@ export default class NavMenu extends StyledComponent {
             text="Pop"
           />
           <NavButton
+            onPress={() => {
+              this.props.navigator.popToTop();
+            }}
+            text="Pop to top"
+          /><NavButton
+            onPress={() => {
+              this.props.navigator.popToTop();
+            }}
+            text="Pop to top"
+          /><NavButton
+            onPress={() => {
+              this.props.navigator.popToTop();
+            }}
+            text="Pop to top"
+          /><NavButton
+            onPress={() => {
+              this.props.navigator.popToTop();
+            }}
+            text="Pop to top"
+          /><NavButton
+            onPress={() => {
+              this.props.navigator.popToTop();
+            }}
+            text="Pop to top"
+          /><NavButton
+            onPress={() => {
+              this.props.navigator.popToTop();
+            }}
+            text="Pop to top"
+          /><NavButton
+            onPress={() => {
+              this.props.navigator.popToTop();
+            }}
+            text="Pop to top"
+          /><NavButton
+            onPress={() => {
+              this.props.navigator.popToTop();
+            }}
+            text="Pop to top"
+          /><NavButton
+            onPress={() => {
+              this.props.navigator.popToTop();
+            }}
+            text="Pop to top"
+          /><NavButton
+            onPress={() => {
+              this.props.navigator.popToTop();
+            }}
+            text="Pop to top"
+          /><NavButton
+            onPress={() => {
+              this.props.navigator.popToTop();
+            }}
+            text="Pop to top"
+          /><NavButton
             onPress={() => {
               this.props.navigator.popToTop();
             }}
