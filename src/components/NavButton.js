@@ -1,8 +1,11 @@
 import React, {
   StyleSheet,
   Text,
+  Image,
+  View,
   TouchableOpacity,
 } from 'react-native';
+import img_ava from '../assets/ava.png'
 
 import FinchReactCore from 'finch-react-core';
 let {StyledComponent} = FinchReactCore;
@@ -12,6 +15,10 @@ export default class NavButton extends StyledComponent {
       <TouchableOpacity
         underlayColor="#B5B5B5"
         onPress={this.props.onPress}>
+        <Image
+          element="buttonIcon"
+          source={img_ava}
+        />
         <Text element="buttonText">{this.props.text}</Text>
       </TouchableOpacity>
     );
@@ -21,14 +28,23 @@ export default class NavButton extends StyledComponent {
     {
       main: {
         backgroundColor: 'white',
-        paddingHorizontal: 15,
-        paddingVertical: 26,
+        padding: 16,
         borderBottomWidth: StyleSheet.hairlineWidth,
         borderBottomColor: '#CDCDCD',
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center'
       },
       buttonText: {
+        flex: 1,
         fontSize: 17,
+        marginLeft: 16,
       },
+      buttonIcon: {
+        borderRadius: 20,
+        width: 40,
+        height: 40
+      }
     }
   ];
 }

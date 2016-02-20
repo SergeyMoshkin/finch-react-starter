@@ -7,6 +7,7 @@ import React, {
   TouchableOpacity,
 } from 'react-native';
 import img_background from '../assets/football.jpg'
+import img_forward from '../assets/ic_forward_black_24dp_2x.png'
 
 import FinchReactCore from 'finch-react-core';
 let {StyledComponent} = FinchReactCore;
@@ -32,6 +33,10 @@ export default class Menu extends StyledComponent {
         {
           menuList.map((el, i) => (
             <TouchableOpacity element="menu_item" key={i} onPress={() => this.props.onCloseControlPanel ?  this.props.onCloseControlPanel() : false}>
+              <Image
+                element="buttonIcon"
+                source={img_forward}
+              />
               <Text element="item_text">{el}</Text>
             </TouchableOpacity>)
           )
@@ -53,10 +58,18 @@ export default class Menu extends StyledComponent {
         borderBottomColor: '#aaa',
         paddingHorizontal: 15,
         paddingVertical: 14,
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center'
       },
       item_text: {
         flex: 1,
         fontWeight: 'bold'
+      },
+      buttonIcon: {
+        borderRadius: 20,
+        width: 40,
+        height: 40
       }
     }
   ];
