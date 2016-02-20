@@ -25,7 +25,6 @@ export default class Drawer extends StyledComponent {
   setDrawerState(state) {
     this.setState({
       isDrawerOpened: state,
-      captureGestures: state
     });
   }
 
@@ -48,7 +47,6 @@ export default class Drawer extends StyledComponent {
         openDrawerOffset={0.2}
         panCloseMask={0.2}
         closedDrawerOffset={-3}
-        captureGestures={this.state.captureGestures}
         styles={{
                 drawer: {shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3, backgroundColor: '#fff', elevation: 3},
                 main: {paddingLeft: 3}
@@ -57,8 +55,8 @@ export default class Drawer extends StyledComponent {
                 main: { opacity:(2-ratio)/2 }
               })}
         tweenDuration={200}
-        onClose={() => this.setDrawerState(false)}
-        onOpen={() => this.setDrawerState(true)}
+        onCloseStart={() => this.setDrawerState(false)}
+        onOpenStart={() => this.setDrawerState(true)}
         tapToClose={true}
       >
         <Navigator ref="nav" onExampleExit={() => {console.log('exit')}} onLeftElementClick={() => this.state.isDrawerOpened ? this.closeControlPanel() : this.openControlPanel()}/>
