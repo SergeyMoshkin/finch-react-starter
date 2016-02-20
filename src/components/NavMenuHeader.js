@@ -41,16 +41,16 @@ export default class NavMenuHeader extends StyledComponent {
         paddingTop: 35
       },
       leftButton: {
-        width: 40,
+        width: 56,
         flexDirection: 'row',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         display: 'flex'
       },
       messageText: {
         fontSize: 17,
         fontWeight: '500',
         color: '#fff',
-        marginLeft: 32,
+        marginLeft: 16,
         paddingTop: 2,
       },
       topIOSTab: {
