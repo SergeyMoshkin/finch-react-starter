@@ -58,6 +58,7 @@ export default class Drawer extends StyledComponent {
         onCloseStart={() => this.setDrawerState(false)}
         onOpenStart={() => this.setDrawerState(true)}
         tapToClose={true}
+        negotiatePan={true}
       >
         <Navigator ref="nav" onExampleExit={() => {console.log('exit')}} onLeftElementClick={() => this.state.isDrawerOpened ? this.closeControlPanel() : this.openControlPanel()}/>
       </UniversalDrawer>
