@@ -13,7 +13,7 @@ export default class NavButton extends StyledComponent {
   render() {
     return (
       <TouchableOpacity
-        underlayColor="#B5B5B5"
+        activeOpacity={1}
         onPress={this.props.onPress}>
         <Image
           element="buttonIcon"

@@ -5,7 +5,7 @@ import React, {
   View,
   Text,
   Image,
-  TouchableOpacity,
+  TouchableHighlight,
 } from 'react-native';
 import img_menu from '../assets/ic_menu_white_24dp_2x.png'
 import NavMenu from './NavMenu'
@@ -39,15 +39,16 @@ export default class NavigatorCustom extends StyledComponent {
   };
 
   render() {
-    let leftIcon = <TouchableOpacity
+    let leftIcon = <TouchableHighlight
         element="leftButton"
-        underlayColor="transparent"
+        activeOpacity={0.7}
+        underlayColor="#DC6A62"
         onPress={() => this.props.onLeftElementClick ? this.props.onLeftElementClick() : false}>
         <Image
           element="icon"
           source={img_menu}
         />
-      </TouchableOpacity>;
+      </TouchableHighlight>;
     return (
       <Navigator
         onExampleExit={() => this.props.onExampleExit()}

@@ -4,7 +4,7 @@ import React, {
   Text,
   View,
   Image,
-  TouchableOpacity,
+  TouchableHighlight,
 } from 'react-native';
 import img_back from '../assets/ic_arrow_back_white_24dp_2x.png'
 
@@ -13,15 +13,16 @@ let {StyledComponent} = FinchReactCore;
 
 export default class NavMenuHeader extends StyledComponent {
   render() {
-    let backButton = <TouchableOpacity
+    let backButton = <TouchableHighlight
       element="leftButton"
-      underlayColor="transparent"
+      activeOpacity={0.7}
+      underlayColor="#DC6A62"
       onPress={() => this.props.navigator.pop()}>
       <Image
         element="icon"
         source={img_back}
       />
-    </TouchableOpacity>;
+    </TouchableHighlight>;
 
     return (
       <View>
@@ -36,15 +37,19 @@ export default class NavMenuHeader extends StyledComponent {
       main: {
         backgroundColor: '#da4237',
         flexDirection: 'row',
-        padding: 15,
+        paddingHorizontal: 15,
         paddingLeft: 0,
-        paddingTop: 35
+        paddingTop: (Platform.OS === "ios") ? 20 : 24,
+        alignItems: 'center',
       },
       leftButton: {
+        height: 56,
         width: 56,
         flexDirection: 'row',
         justifyContent: 'center',
-        display: 'flex'
+        alignItems: 'center',
+        display: 'flex',
+        borderRadius: 56,
       },
       messageText: {
         fontSize: 17,
