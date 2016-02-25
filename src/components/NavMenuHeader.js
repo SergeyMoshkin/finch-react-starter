@@ -5,6 +5,7 @@ import React, {
   View,
   Image,
   TouchableHighlight,
+  TouchableNativeFeedback,
 } from 'react-native';
 import img_back from '../assets/ic_arrow_back_white_24dp_2x.png'
 
@@ -13,16 +14,27 @@ let {StyledComponent} = FinchReactCore;
 
 export default class NavMenuHeader extends StyledComponent {
   render() {
-    let backButton = <TouchableHighlight
-      element="leftButton"
-      activeOpacity={0.7}
-      underlayColor="#DC6A62"
-      onPress={() => this.props.navigator.pop()}>
-      <Image
-        element="icon"
-        source={img_back}
-      />
-    </TouchableHighlight>;
+    let backButton = (Platform.OS !== 'android')
+      ? <TouchableHighlight
+          element="leftButton"
+          activeOpacity={0.7}
+          underlayColor="#DC6A62"
+          onPress={() => this.props.navigator.pop()}>
+          <Image
+            element="icon"
+            source={img_back}
+          />
+      </TouchableHighlight>
+      : <TouchableNativeFeedback
+          background={TouchableNativeFeedback.Ripple('rgba(255, 255, 255, 0.5)', true)}
+          onPress={() => this.props.navigator.pop()}>
+          <View element="leftButton">
+            <Image
+              element="icon"
+              source={img_back}
+            />
+          </View>
+      </TouchableNativeFeedback>;
 
     return (
       <View>

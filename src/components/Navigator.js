@@ -1,4 +1,5 @@
 import React, {
+  Platform,
   Navigator,
   ScrollView,
   StyleSheet,
@@ -6,6 +7,7 @@ import React, {
   Text,
   Image,
   TouchableHighlight,
+  TouchableNativeFeedback,
 } from 'react-native';
 import img_menu from '../assets/ic_menu_white_24dp_2x.png'
 import NavMenu from './NavMenu'
@@ -39,7 +41,8 @@ export default class NavigatorCustom extends StyledComponent {
   };
 
   render() {
-    let leftIcon = <TouchableHighlight
+    let leftIcon = (Platform.OS !== 'android')
+      ? <TouchableHighlight
         element="leftButton"
         activeOpacity={0.7}
         underlayColor="#DC6A62"
@@ -48,7 +51,17 @@ export default class NavigatorCustom extends StyledComponent {
           element="icon"
           source={img_menu}
         />
-      </TouchableHighlight>;
+      </TouchableHighlight>
+      : <TouchableNativeFeedback
+        background={TouchableNativeFeedback.Ripple('rgba(255, 255, 255, 0.5)', true)}
+        onPress={() => this.props.onLeftElementClick ? this.props.onLeftElementClick() : false}>
+        <View element="leftButton">
+          <Image
+            element="icon"
+            source={img_menu}
+          />
+        </View>
+      </TouchableNativeFeedback>;
     return (
       <Navigator
         onExampleExit={() => this.props.onExampleExit()}
