@@ -15,6 +15,7 @@ import FinchReactCore from 'finch-react-core';
 let {StyledComponent} = FinchReactCore;
 
 export default class NavMenu extends StyledComponent {
+
   render() {
     return (
       <View>
@@ -37,6 +38,15 @@ export default class NavMenu extends StyledComponent {
               });
             }}
             text="Float in from right"
+          />
+          <NavButton
+            onPress={() => {
+              this.props.navigator.push({
+                id: 'slider',
+                message: 'Swipe left/right to switch picture',
+              });
+            }}
+            text="Slider"
           />
           <NavButton
             onPress={() => {

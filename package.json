@@ -34,6 +34,7 @@
     "react-native-android-statusbar": "^0.1.2",
     "react-native-cli": "^0.1.10",
     "react-native-drawer": "^1.13.1",
+    "react-native-swiper": "^1.4.3",
     "react-web": "^0.2.1",
     "style-loader": "^0.13.0",
     "webpack": "^1.9.10",

@@ -20,7 +20,7 @@ export default class NavigatorCustom extends StyledComponent {
 
   renderScene(route, nav) {
     switch (route.id) {
-      case 'back':
+      case 'slider':
         return (
           <NavigationScene
             leftElement={route.leftElement}
@@ -71,10 +71,10 @@ export default class NavigatorCustom extends StyledComponent {
           if (route.sceneConfig) {
             return route.sceneConfig;
           }
-          return Navigator.SceneConfigs.HorizontalSwipeJump;
+          return Object.assign(Navigator.SceneConfigs.HorizontalSwipeJump, {gestures: false});
         }}
       />
-    );
+    )
   };
 
   static styles = T => [
