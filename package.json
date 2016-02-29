@@ -32,6 +32,7 @@
     "react-hot-loader": "^1.2.7",
     "react-native": "^0.20.0",
     "react-native-android-statusbar": "^0.1.2",
+    "react-native-chart": "^0.1.10",
     "react-native-cli": "^0.1.10",
     "react-native-drawer": "^1.13.1",
     "react-native-swiper": "^1.4.3",

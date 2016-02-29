@@ -50,6 +50,15 @@ export default class NavMenu extends StyledComponent {
           />
           <NavButton
             onPress={() => {
+              this.props.navigator.push({
+                id: 'barchart',
+                message: 'back',
+              });
+            }}
+            text="BarChart"
+          />
+          <NavButton
+            onPress={() => {
               this.props.navigator.pop();
             }}
             text="Pop"

@@ -11,6 +11,7 @@ import React, {
 } from 'react-native';
 import img_menu from '../assets/ic_menu_white_24dp_2x.png'
 import NavMenu from './NavMenu'
+import BarChart from './BarChart'
 
 import FinchReactCore from 'finch-react-core';
 let {StyledComponent} = FinchReactCore;
@@ -27,7 +28,15 @@ export default class NavigatorCustom extends StyledComponent {
             message={route.message}
             navigator={nav}
           />
-      );
+        );
+      case 'barchart':
+        return (
+          <BarChart
+            leftElement={route.leftElement}
+            message={route.message}
+            navigator={nav}
+          />
+        );
       default:
         return (
           <NavMenu
