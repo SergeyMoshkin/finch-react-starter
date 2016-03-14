@@ -14,6 +14,7 @@ import Navigator from './Navigator'
 import Menu from './Menu'
 import img_sandwich from '../assets/sandwich.png'
 import img_background from '../assets/football.jpg'
+import linkTransition from '../lib/linkTransition'
 
 import FinchReactCore from 'finch-react-core';
 let {StyledComponent} = FinchReactCore;
@@ -28,14 +29,6 @@ class App extends StyledComponent {
     layout: {},
   };
 
-  linkTransition() {
-    if(this.refs.nav.state.navigator){
-      this.refs.nav.state.navigator.push({
-        message: 'Swipe right to dismiss'
-      });
-    }
-  }
-
   render() {
     return (
       <View onLayout={(ev)=>this.setState({layout:ev.nativeEvent.layout})}>
@@ -45,7 +38,7 @@ class App extends StyledComponent {
               <Drawer />
               :
               <View style={{position: "absolute",top: 0,bottom: 0,left: 0,right: 0,flexDirection: "row",overflow: "hidden"}}>
-                <View element="controlPanel"><Menu onLinkClick={() => this.linkTransition()}/></View>
+                <View element="controlPanel"><Menu onLinkClick={() => linkTransition(this.refs.nav)}/></View>
                 <View element="navigator">
                   <Navigator ref="nav" onExampleExit={() => {console.log('exit_web')}}/>
                 </View>

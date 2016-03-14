@@ -9,6 +9,7 @@ import UniversalDrawer from 'react-native-drawer'
 import NavigatorScene from './NavigationScene'
 import Navigator from './Navigator'
 import Menu from './Menu'
+import linkTransition from '../lib/linkTransition'
 
 
 import FinchReactCore from 'finch-react-core';
@@ -46,20 +47,12 @@ export default class Drawer extends StyledComponent {
     }
   }
 
-  linkTransition() {
-    if(this.refs.nav.state.navigator){
-      this.refs.nav.state.navigator.push({
-        message: 'Swipe right to dismiss'
-      });
-    }
-  }
-
   render() {
     return (
       <UniversalDrawer
         ref="drawer"
         type="overlay"
-        content={<Menu onCloseControlPanel={() => this.closeControlPanel()} onLinkClick={() => this.linkTransition()} />}
+        content={<Menu onCloseControlPanel={() => this.closeControlPanel()} onLinkClick={() => linkTransition(this.refs.nav)} />}
         openDrawerOffset={0.2}
         panCloseMask={0.2}
         closedDrawerOffset={-3}
