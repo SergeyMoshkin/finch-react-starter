@@ -47,7 +47,7 @@ export default class Drawer extends StyledComponent {
         message: 'Swipe right to dismiss'
       });
     }
-}
+  }
 
   render() {
     return (

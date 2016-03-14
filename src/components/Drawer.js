@@ -38,12 +38,28 @@ export default class Drawer extends StyledComponent {
     this.refs.drawer.open();
   }
 
+  linkTransition() {
+    if(this.refs.nav.state.navigator){
+      this.refs.nav.state.navigator.push({
+        message: 'Swipe right to dismiss'
+      });
+    }
+  }
+
+  linkTransition() {
+    if(this.refs.nav.state.navigator){
+      this.refs.nav.state.navigator.push({
+        message: 'Swipe right to dismiss'
+      });
+    }
+  }
+
   render() {
     return (
       <UniversalDrawer
         ref="drawer"
         type="overlay"
-        content={<Menu onCloseControlPanel={() => this.closeControlPanel()}/>}
+        content={<Menu onCloseControlPanel={() => this.closeControlPanel()} onLinkClick={() => this.linkTransition()} />}
         openDrawerOffset={0.2}
         panCloseMask={0.2}
         closedDrawerOffset={-3}
