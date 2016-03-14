@@ -32,7 +32,7 @@ export default class Menu extends StyledComponent {
         />
         {
           menuList.map((el, i) => (
-            <TouchableOpacity element="menu_item" key={i} onPress={() => this.props.onCloseControlPanel ?  this.props.onCloseControlPanel() : false}>
+            <TouchableOpacity element="menu_item" key={i} onPress={() => { this.props.onLinkClick(); this.props.onCloseControlPanel ?  this.props.onCloseControlPanel() : false} }>
               <Image
                 element="buttonIcon"
                 source={img_forward}

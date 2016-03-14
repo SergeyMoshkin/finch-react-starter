@@ -21,6 +21,10 @@ export default class Drawer extends StyledComponent {
     isDrawerOpened: false,
   };
 
+  componentDidMount() {
+    console.log(this.refs.nav.state.navigator);
+  }
+
   setDrawerState(state) {
     this.setState({
       isDrawerOpened: state,
@@ -37,6 +41,14 @@ export default class Drawer extends StyledComponent {
     this.refs.drawer.openDrawer();
   }
 
+  linkTransition() {
+    if(this.refs.nav.state.navigator){
+      this.refs.nav.state.navigator.push({
+        message: 'Swipe right to dismiss'
+      });
+    }
+}
+
   render() {
     return (
       <DrawerLayoutAndroid
@@ -45,7 +57,7 @@ export default class Drawer extends StyledComponent {
         onDrawerOpen={()=>this.setDrawerState(true)}
         drawerWidth={300}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => <Menu onCloseControlPanel={() => this.closeControlPanel()}/>}>
+        renderNavigationView={() => <Menu onCloseControlPanel={() => this.closeControlPanel()} onLinkClick={() => this.linkTransition()}/>}>
         <Navigator ref="nav" onExampleExit={() => {console.log('exit')}} onLeftElementClick={() => this.state.isDrawerOpened ? this.closeControlPanel() : this.openControlPanel()}/>
       </DrawerLayoutAndroid>
     )

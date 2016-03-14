@@ -19,6 +19,14 @@ import NavigationScene from './NavigationScene'
 
 export default class NavigatorCustom extends StyledComponent {
 
+  state = {
+    navigator: null
+  };
+
+  componentDidMount(){
+    this.setState({navigator: this.refs.nav})
+  }
+
   renderScene(route, nav) {
     switch (route.id) {
       case 'slider':
@@ -73,6 +81,7 @@ export default class NavigatorCustom extends StyledComponent {
       </TouchableNativeFeedback>;
     return (
       <Navigator
+        ref="nav"
         onExampleExit={() => this.props.onExampleExit()}
         initialRoute={{ message: 'First Page', leftElement: leftIcon }}
         renderScene={this.renderScene}
