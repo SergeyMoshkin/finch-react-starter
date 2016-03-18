@@ -1,4 +1,5 @@
 import React, {
+  PropTypes,
   Component,
   View,
   Text,
@@ -16,6 +17,10 @@ let {StyledComponent} = FinchReactCore;
 const IMAGE_RATIO = 1600 / 2560;
 
 export default class Menu extends StyledComponent {
+
+  static PropTypes = {
+    onLinkClick: PropTypes.func
+  };
 
   state={
     backgroundWidth: null

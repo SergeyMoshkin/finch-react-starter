@@ -39,14 +39,6 @@ export default class Drawer extends StyledComponent {
     this.refs.drawer.open();
   }
 
-  linkTransition() {
-    if(this.refs.nav.state.navigator){
-      this.refs.nav.state.navigator.push({
-        message: 'Swipe right to dismiss'
-      });
-    }
-  }
-
   render() {
     return (
       <UniversalDrawer
