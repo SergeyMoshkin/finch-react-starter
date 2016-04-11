@@ -52,7 +52,7 @@ export default class NavMenu extends StyledComponent {
             onPress={() => {
               this.props.navigator.push({
                 id: 'barchart',
-                message: 'back',
+                message: 'Back',
               });
             }}
             text="BarChart"
